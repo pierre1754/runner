@@ -6,25 +6,6 @@
 ##
 
 SRC =	flags.c									\
-		src/start_engine.c						\
-		src/draw_element.c						\
-		src/draw_background.c					\
-		src/get_element.c						\
-		src/init_element.c						\
-		src/set_element.c						\
-		src/pause_game.c						\
-		src/move_planes.c						\
-		src/destroy_plane.c						\
-		src/set_explosion.c						\
-		src/set_element/set_asset.c				\
-		src/set_element/set_poland.c			\
-		src/set_element/set_engine.c			\
-		src/set_element/set_environement.c		\
-		src/set_element/set_object.c			\
-		src/set_element/set_explosion.c			\
-		src/set_element/set_window.c			\
-		src/set_element/destroy_engine.c		\
-		src/set_element/destroy_object.c		\
 
 SRC_MAIN =	main.c								\
 
@@ -36,7 +17,7 @@ OBJ_MAIN =	$(SRC_MAIN)
 
 OBJ_TEST =	$(SRC_TEST:.c=.o)
 
-CFLAGS	=	-L lib/my -lmy -I include -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio -lm
+CFLAGS	=	-I include -L lib/my -lmy -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio -lm
 
 CFLAGS_TEST	=	--coverage -lcriterion
 

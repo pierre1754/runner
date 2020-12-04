@@ -7,6 +7,13 @@
 
 #include "my_runner.h"
 
+void draw_background(void)
+{
+    engine_t *engine = get_engine();
+
+
+}
+
 void draw_element(void)
 {
     engine_t *engine = get_engine();
