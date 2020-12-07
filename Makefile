@@ -5,9 +5,14 @@
 ## Main Makefile
 ##
 
-SRC =	flags.c									\
+SRC =	flags.c													\
+		src/create_element/create_engine.c						\
+		src/create_element/create_asset.c						\
+		src/destroy_element/destroy_asset.c						\
+		src/create_element/create_object/create_environement.c	\
+		src/create_element/create_object/create_object.c		\
 
-SRC_MAIN =	main.c								\
+SRC_MAIN =	main.c	\
 
 SRC_TEST =
 

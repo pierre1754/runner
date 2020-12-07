@@ -22,6 +22,10 @@ static void create_parallax(void)
 {
     engine_t *engine = get_engine();
 
+    for (int i = 0; i < PARA_NBR; i++) {
+        malloc(sizeof(textures_t));
+        GET_TEXTURE(engine, i)->rect_texture = (sfIntRect){0};
+    }
     GET_TEXTURE(engine, texParStat)->texture =
     sfTexture_createFromFile("asset/par_notmov.png", NULL);
     GET_TEXTURE(engine, texPar1)->texture =
@@ -30,9 +34,10 @@ static void create_parallax(void)
     sfTexture_createFromFile("asset/par_second.png", NULL);
     GET_TEXTURE(engine, texPar3)->texture =
     sfTexture_createFromFile("asset/par_last.png", NULL);
-    for (int i = 0; i < PARA_NBR; i++) {
-        GET_TEXTURE(engine, i)->rect_texture = (sfIntRect){0};
-    }
+    GET_TEXTURE(engine, texPlay)->texture =
+    sfTexture_createFromFile("asset/play.png", NULL);
+    GET_TEXTURE(engine, texQuit)->texture =
+    sfTexture_createFromFile("asset/quit.png", NULL);
 }
 
 static void create_textures(void)

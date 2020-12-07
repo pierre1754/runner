@@ -15,8 +15,17 @@
 #include <unistd.h>
 #include <sys/queue.h>
 
+#define GET_SCORE(engine) engine->object->env->score
+
+#define GET_ENV(engine) engine->object->env
+#define GET_PARA(engine, nbr) engine->object->env->parallax[nbr]
+#define GET_BUTTON(engine) engine->object->env->buttons
+
 typedef enum {
-    // ADD PARALLAX HERE
+    parColor,
+    par1,
+    par2,
+    par3,
 
     parSize
 } parallax_list_t;
@@ -34,7 +43,7 @@ typedef struct {
 
 typedef struct {
     size_t score;
-    parallax_list_t *parallax[parSize];
+    parallax_t *parallax[parSize];
     buttons_t *buttons;
 } environement_t;
 
@@ -57,6 +66,8 @@ typedef struct {
     player_t *player;
     LIST_HEAD(, map_elem_s) map_elem;
 } object_t;
+
+void create_environement(void);
 
 void create_object(void);
 void destroy_object(void);

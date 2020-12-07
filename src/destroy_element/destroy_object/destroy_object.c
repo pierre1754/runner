@@ -11,6 +11,6 @@ void destroy_object(void)
 {
     engine_t *engine = get_engine();
 
-
+    destroy_environement();
     free(engine->object);
 }

@@ -26,6 +26,8 @@ typedef enum {
     texPar1,
     texPar2,
     texPar3,
+    texPlay,
+    texQuit,
 
     texSize
 } textures_list_t;
