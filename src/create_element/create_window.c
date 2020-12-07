@@ -14,7 +14,7 @@ void create_window(void)
 
     engine->window = malloc(sizeof(window_t));
     GET_WINDOW(engine) = sfRenderWindow_create(mode,
-                                            "My Hunter",
+                                            "My Runner",
                                             sfVideoMode_isValid(mode) ?
                                             sfFullscreen : sfClose,
                                             NULL);
