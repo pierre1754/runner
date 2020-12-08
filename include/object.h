@@ -21,6 +21,10 @@
 #define GET_PARA(engine, nbr) engine->object->env->parallax[nbr]
 #define GET_BUTTON(engine) engine->object->env->buttons
 
+#define GET_PLAYER(engine) engine->object->player
+
+#define GET_HEAD(engine) &engine->object->map_elem
+
 typedef enum {
     parColor,
     par1,
@@ -51,6 +55,7 @@ typedef struct {
     sfSprite *sprite;
     sfVector2f speed;
     sfVector2f pos;
+    sfIntRect rect;
 } player_t;
 
 typedef struct map_elem_s {

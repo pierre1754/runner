@@ -18,11 +18,11 @@ static void create_sounds(void)
     sfSound_setBuffer(GET_JUMP(engine), GET_BUF_JUMP(engine));
 }
 
-static void create_parallax(void)
+static void create_non_rect(void)
 {
     engine_t *engine = get_engine();
 
-    for (int i = 0; i < PARA_NBR; i++) {
+    for (int i = 0; i < texSize; i++) {
         malloc(sizeof(textures_t));
         GET_TEXTURE(engine, i)->rect_texture = (sfIntRect){0};
     }
@@ -38,13 +38,24 @@ static void create_parallax(void)
     sfTexture_createFromFile("asset/play.png", NULL);
     GET_TEXTURE(engine, texQuit)->texture =
     sfTexture_createFromFile("asset/quit.png", NULL);
+
+}
+
+static void create_text_sprite(void)
+{
+    engine_t *engine = get_engine();
+
+    GET_TEXTURE(engine, texPlayer)->texture =
+    sfTexture_createFromFile("asset/player_run.png", NULL);
+    GET_TEXTURE(engine, texPlayer)->rect_texture = (sfIntRect){0, 0, 144, 24};
 }
 
 static void create_textures(void)
 {
     engine_t *engine = get_engine();
 
-    create_parallax();
+    create_non_rect();
+    create_text_sprite();
 }
 
 void create_asset(void)

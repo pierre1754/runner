@@ -14,6 +14,7 @@
 #define GET_BUF_JUMP(engine) engine->asset->sounds->buf_jump
 
 #define PARA_NBR 4
+#define BUTTON_NBR 2
 #define GET_TEXTURE(engine, nbr) engine->asset->textures[nbr]
 
 typedef struct {
@@ -28,6 +29,7 @@ typedef enum {
     texPar3,
     texPlay,
     texQuit,
+    texPlayer,
 
     texSize
 } textures_list_t;
