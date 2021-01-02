@@ -21,7 +21,7 @@ static void destroy_textures(void)
     engine_t *engine = get_engine();
 
     for (int i = 0; i < texSize; i++) {
-        sfTexture_destroy(GET_TEXTURE(engine, i));
+        sfTexture_destroy(GET_TEXTURE(engine, i)->texture);
         free(engine->asset->textures[i]);
     }
 }

@@ -32,6 +32,7 @@ void create_object(void)
 {
     engine_t *engine = get_engine();
 
+    engine->object = malloc(sizeof(object_t));
     create_environement();
     create_player();
     create_map();

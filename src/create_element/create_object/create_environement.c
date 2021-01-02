@@ -12,7 +12,7 @@ static void create_para_sprite(void)
     engine_t *engine = get_engine();
 
     for (int i = 0; i < parSize; i++) {
-        malloc(sizeof(parallax_t));
+        GET_PARA(engine, i) = malloc(sizeof(parallax_t));
         GET_PARA(engine, i)->sprite = sfSprite_create();
         sfSprite_setTexture(GET_PARA(engine, i)->sprite,
                             GET_TEXTURE(engine, i)->texture,
@@ -29,7 +29,7 @@ static void create_buttons(void)
     GET_BUTTON(engine) = malloc(sizeof(buttons_t));
     GET_BUTTON(engine)->play_button = sfSprite_create();
     sfSprite_setTexture(GET_BUTTON(engine)->play_button,
-                        GET_TEXTURE(engine, texPlay),
+                        GET_TEXTURE(engine, texPlay)->texture,
                         sfTrue);
     GET_BUTTON(engine)->pause_button = sfSprite_create();
     sfSprite_setTexture(GET_BUTTON(engine)->pause_button,

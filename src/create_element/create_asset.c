@@ -52,7 +52,7 @@ static void create_textures(void)
     engine_t *engine = get_engine();
 
     for (int i = 0; i < texSize; i++) {
-        malloc(sizeof(textures_t));
+        GET_TEXTURE(engine, i) = malloc(sizeof(textures_t));
         GET_TEXTURE(engine, i)->rect_texture = (sfIntRect){0};
     }
     create_non_rect();
@@ -63,6 +63,7 @@ void create_asset(void)
 {
     engine_t *engine = get_engine();
 
+    engine->asset = malloc(sizeof(asset_t));
     GET_MUSIC(engine) = sfMusic_createFromFile("asset/music.ogg");
     create_sounds();
     create_textures();

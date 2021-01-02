@@ -34,4 +34,6 @@ int flag(char **av);
 
 engine_t *get_engine(void);
 
+void create_engine(void);
+
 #endif // MY_RUNNER_H

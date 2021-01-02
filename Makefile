@@ -7,10 +7,11 @@
 
 SRC =	flags.c													\
 		src/create_element/create_engine.c						\
+		src/create_element/create_window.c						\
 		src/create_element/create_asset.c						\
-		src/destroy_element/destroy_asset.c						\
-		src/create_element/create_object/create_environement.c	\
 		src/create_element/create_object/create_object.c		\
+		src/create_element/create_object/create_environement.c	\
+		src/destroy_element/destroy_asset.c						\
 
 SRC_MAIN =	main.c	\
 
@@ -28,7 +29,7 @@ CFLAGS_TEST	=	--coverage -lcriterion
 
 CFLAGS_DEBUG =	-Wall -Wextra -W -g
 
-NAME =	my_hunter
+NAME =	my_runner
 
 NAME_TEST =	unit_tests
 
