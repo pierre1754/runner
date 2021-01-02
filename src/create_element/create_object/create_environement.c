@@ -15,8 +15,8 @@ static void create_para_sprite(void)
         malloc(sizeof(parallax_t));
         GET_PARA(engine, i)->sprite = sfSprite_create();
         sfSprite_setTexture(GET_PARA(engine, i)->sprite,
-                        GET_TEXTURE(engine, i)->texture,
-                        sfTrue);
+                            GET_TEXTURE(engine, i)->texture,
+                            sfTrue);
         GET_PARA(engine, i)->pos = (sfVector2f){0};
         GET_PARA(engine, i)->speed = (sfVector2f){0};
     }
@@ -33,7 +33,7 @@ static void create_buttons(void)
                         sfTrue);
     GET_BUTTON(engine)->pause_button = sfSprite_create();
     sfSprite_setTexture(GET_BUTTON(engine)->pause_button,
-                        GET_TEXTURE(engine, texQuit),
+                        GET_TEXTURE(engine, texQuit)->texture,
                         sfTrue);
 }
 

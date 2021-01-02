@@ -7,9 +7,15 @@
 
 #include "my_runner.h"
 
-map_elem_t *new_map_elem(void)
+map_elem_t *new_map_elem_1(void)
 {
+    engine_t *engine = get_engine();
     map_elem_t *new_elem = malloc(sizeof(map_elem_t));
 
-    new_elem->
+    new_elem->speed = (sfVector2f){0};
+    new_elem->pos = (sfVector2f){0};
+    new_elem->sprite = sfSprite_create();
+    sfSprite_setTexture(new_elem->sprite,
+                        GET_TEXTURE(engine, texGround)->texture,
+                        sfTrue);
 }

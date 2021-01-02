@@ -22,10 +22,6 @@ static void create_non_rect(void)
 {
     engine_t *engine = get_engine();
 
-    for (int i = 0; i < texSize; i++) {
-        malloc(sizeof(textures_t));
-        GET_TEXTURE(engine, i)->rect_texture = (sfIntRect){0};
-    }
     GET_TEXTURE(engine, texParStat)->texture =
     sfTexture_createFromFile("asset/par_notmov.png", NULL);
     GET_TEXTURE(engine, texPar1)->texture =
@@ -38,7 +34,8 @@ static void create_non_rect(void)
     sfTexture_createFromFile("asset/play.png", NULL);
     GET_TEXTURE(engine, texQuit)->texture =
     sfTexture_createFromFile("asset/quit.png", NULL);
-
+    GET_TEXTURE(engine, texGround)->texture =
+    sfTexture_createFromFile("asset/ground.png", NULL);
 }
 
 static void create_text_sprite(void)
@@ -54,6 +51,10 @@ static void create_textures(void)
 {
     engine_t *engine = get_engine();
 
+    for (int i = 0; i < texSize; i++) {
+        malloc(sizeof(textures_t));
+        GET_TEXTURE(engine, i)->rect_texture = (sfIntRect){0};
+    }
     create_non_rect();
     create_text_sprite();
 }

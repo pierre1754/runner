@@ -30,6 +30,7 @@ typedef enum {
     texPlay,
     texQuit,
     texPlayer,
+    texGround,
 
     texSize
 } textures_list_t;

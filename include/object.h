@@ -60,7 +60,6 @@ typedef struct {
 
 typedef struct map_elem_s {
     sfSprite *sprite;
-    sfIntRect rect_sprite;
     sfVector2f speed;
     sfVector2f pos;
     LIST_ENTRY(map_elem_t) entries;
