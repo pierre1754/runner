@@ -19,6 +19,6 @@ void destroy_engine(void)
 {
     destroy_window();
     destroy_asset();
-    destroy_object();
+    // destroy_object();
     destroy_time();
 }

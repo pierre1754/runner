@@ -11,7 +11,11 @@ SRC =	flags.c													\
 		src/create_element/create_asset.c						\
 		src/create_element/create_object/create_object.c		\
 		src/create_element/create_object/create_environement.c	\
+		src/destroy_element/destroy_engine.c					\
+		src/destroy_element/destroy_window.c					\
 		src/destroy_element/destroy_asset.c						\
+		src/start_engine.c										\
+		src/get_element.c										\
 
 SRC_MAIN =	main.c	\
 

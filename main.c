@@ -15,7 +15,7 @@ int main(int argc, char **argv)
         return flag(argv);
     create_engine();
     // init_element();
-    // start_engine();
-    // destroy_engine();
+    start_engine();
+    destroy_engine();
     return 0;
 }

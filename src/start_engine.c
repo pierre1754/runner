@@ -16,14 +16,14 @@ void start_engine(void)
     while (sfRenderWindow_isOpen(GET_WINDOW(engine))) {
         while (sfRenderWindow_pollEvent(GET_WINDOW(engine), &engine->event)) {
             get_event();
-            if (pause_game()) {
-                sfRenderWindow_close(GET_WINDOW(engine));
-                break;
-            }
+            // if (pause_game()) {
+            //     sfRenderWindow_close(GET_WINDOW(engine));
+            //     break;
+            // }
         }
-        get_element();
-        set_element();
-        move_planes();
-        draw_element();
+        // get_element();
+        // set_element();
+        // move_planes();
+        // draw_element();
     }
 }

@@ -31,9 +31,13 @@ typedef struct {
 } engine_t;
 
 int flag(char **av);
-
 engine_t *get_engine(void);
 
 void create_engine(void);
+
+void start_engine(void);
+void get_event(void);
+
+void destroy_engine(void);
 
 #endif // MY_RUNNER_H

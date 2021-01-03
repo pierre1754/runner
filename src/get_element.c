@@ -11,8 +11,8 @@ void get_event(void)
 {
     engine_t *engine = get_engine();
 
-    // if (engine->event.type ) EVENT
-
+    if (engine->event.type == sfEvtKeyPressed)
+        sfRenderWindow_close(GET_WINDOW(engine));
 }
 
 void get_time(void)
