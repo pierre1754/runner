@@ -11,7 +11,14 @@ void draw_background(void)
 {
     engine_t *engine = get_engine();
 
-
+    sfRenderWindow_drawSprite(GET_WINDOW(engine),
+                            GET_PARA(engine, parColor)->sprite,
+                            NULL);
+    for (int i = parSize - 1; i > 0; i--) {
+        sfRenderWindow_drawSprite(GET_WINDOW(engine),
+                                GET_PARA(engine, parColor + i)->sprite,
+                                NULL);
+    }
 }
 
 void draw_element(void)
@@ -19,6 +26,6 @@ void draw_element(void)
     engine_t *engine = get_engine();
 
     sfRenderWindow_clear(GET_WINDOW(engine), sfBlack);
-    // TO DISPLAY
+    draw_background();
     sfRenderWindow_display(GET_WINDOW(engine));
 }

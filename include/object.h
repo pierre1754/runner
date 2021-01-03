@@ -27,9 +27,12 @@
 
 typedef enum {
     parColor,
-    par1,
-    par2,
-    par3,
+    par1_1,
+    par1_2,
+    par2_1,
+    par2_2,
+    par3_1,
+    par3_2,
 
     parSize
 } parallax_list_t;

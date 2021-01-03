@@ -15,7 +15,7 @@ void get_event(void)
         sfRenderWindow_close(GET_WINDOW(engine));
 }
 
-void get_time(void)
+static void get_time(void)
 {
     engine_t *engine = get_engine();
 

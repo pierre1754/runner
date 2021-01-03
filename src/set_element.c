@@ -7,6 +7,13 @@
 
 #include "my_runner.h"
 
+void set_image_pos(void)
+{
+    engine_t *engine = get_engine();
+
+    // sfSprite_move(GET_PARA(engine, par1_1))
+}
+
 void set_sprite_loop(void)
 {
     engine_t *engine = get_engine();

@@ -21,9 +21,9 @@ void start_engine(void)
             //     break;
             // }
         }
-        // get_element();
+        get_element();
         // set_element();
         // move_planes();
-        // draw_element();
+        draw_element();
     }
 }
