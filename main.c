@@ -14,7 +14,7 @@ int main(int argc, char **argv)
     if (argv[1][0] == '-')
         return flag(argv);
     create_engine();
-    // init_element();
+    init_element();
     start_engine();
     destroy_engine();
     return 0;

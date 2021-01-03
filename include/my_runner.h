@@ -35,6 +35,7 @@ engine_t *get_engine(void);
 
 void create_engine(void);
 
+void init_element(void);
 void start_engine(void);
 void get_event(void);
 
