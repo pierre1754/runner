@@ -11,7 +11,10 @@ void set_image_pos(void)
 {
     engine_t *engine = get_engine();
 
-    // sfSprite_move(GET_PARA(engine, par1_1))
+    for (int i = 1; i < parSize; i++) {
+        sfSprite_move(GET_PARA(engine, i)->sprite,
+        (sfVector2f){GET_PARA(engine, i)->speed.x * GET_ELAPSED(engine), 0.0f});
+    }
 }
 
 void set_sprite_loop(void)
@@ -26,6 +29,5 @@ void set_sprite_loop(void)
 
 void set_element(void)
 {
-    engine_t *engine = get_engine();
-
+    set_image_pos();
 }

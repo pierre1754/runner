@@ -40,6 +40,7 @@ void start_engine(void);
 
 void get_event(void);
 void get_element(void);
+void set_element(void);
 void draw_element(void);
 
 void destroy_engine(void);

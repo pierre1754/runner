@@ -34,10 +34,23 @@ static void image_scale(void)
     }
 }
 
+static void image_speed(void)
+{
+    engine_t *engine = get_engine();
+
+    GET_PARA(engine, par1_1)->speed = (sfVector2f){-300.0f, 0.0f};
+    GET_PARA(engine, par1_2)->speed = (sfVector2f){-300.0f, 0.0f};
+    GET_PARA(engine, par2_1)->speed = (sfVector2f){-200.0f, 0.0f};
+    GET_PARA(engine, par2_2)->speed = (sfVector2f){-200.0f, 0.0f};
+    GET_PARA(engine, par3_1)->speed = (sfVector2f){-100.0f, 0.0f};
+    GET_PARA(engine, par3_2)->speed = (sfVector2f){-100.0f, 0.0f};
+}
+
 void init_element(void)
 {
     init_cursor();
     init_music();
     image_scale();
+    image_speed();
     // ADD
 }
