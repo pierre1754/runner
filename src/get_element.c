@@ -15,11 +15,21 @@ void get_event(void)
         sfRenderWindow_close(GET_WINDOW(engine));
 }
 
-static void get_time(void)
+void get_time(void)
 {
     engine_t *engine = get_engine();
 
     GET_ELAPSED(engine) = sfTime_asSeconds(sfClock_restart(GET_CLOCK(engine)));
+}
+
+void get_image_pos(void)
+{
+    engine_t *engine = get_engine();
+
+    for (int i = 1; i < parSize; i++) {
+        GET_PARA(engine, i)->pos =
+        sfSprite_getPosition(GET_PARA(engine, i)->sprite);
+    }
 }
 
 void get_element(void)

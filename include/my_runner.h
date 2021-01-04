@@ -35,12 +35,24 @@ engine_t *get_engine(void);
 
 void create_engine(void);
 
+void init_cursor(void);
+void init_music(void);
+void image_scale(void);
+void image_speed(void);
+void images_pos(void);
 void init_element(void);
+
 void start_engine(void);
 
 void get_event(void);
+void get_time(void);
+void get_image_pos(void);
 void get_element(void);
+
+void set_image_pos(void);
 void set_element(void);
+
+void draw_background(void);
 void draw_element(void);
 
 void destroy_engine(void);

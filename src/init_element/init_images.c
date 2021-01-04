@@ -7,22 +7,7 @@
 
 #include "my_runner.h"
 
-static void init_cursor(void)
-{
-    engine_t *engine = get_engine();
-
-    sfRenderWindow_setMouseCursorVisible(GET_WINDOW(engine), sfFalse);
-}
-
-static void init_music(void)
-{
-    engine_t *engine = get_engine();
-
-    sfMusic_play(GET_MUSIC(engine));
-    sfMusic_setLoop(GET_MUSIC(engine), sfTrue);
-}
-
-static void image_scale(void)
+void image_scale(void)
 {
     engine_t *engine = get_engine();
 
@@ -34,7 +19,7 @@ static void image_scale(void)
     }
 }
 
-static void image_speed(void)
+void image_speed(void)
 {
     engine_t *engine = get_engine();
 
@@ -46,11 +31,11 @@ static void image_speed(void)
     GET_PARA(engine, par3_2)->speed = (sfVector2f){-100.0f, 0.0f};
 }
 
-void init_element(void)
+void images_pos(void)
 {
-    init_cursor();
-    init_music();
-    image_scale();
-    image_speed();
-    // ADD
+    engine_t *engine = get_engine();
+
+    sfSprite_setPosition(GET_PARA(engine, par1_2)->sprite, (sfVector2f){1776.0f, 0.0f});
+    sfSprite_setPosition(GET_PARA(engine, par2_2)->sprite, (sfVector2f){1776.0f, 0.0f});
+    sfSprite_setPosition(GET_PARA(engine, par3_2)->sprite, (sfVector2f){1776.0f, 0.0f});
 }
