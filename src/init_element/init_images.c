@@ -23,19 +23,22 @@ void image_speed(void)
 {
     engine_t *engine = get_engine();
 
-    GET_PARA(engine, par1_1)->speed = (sfVector2f){-300.0f, 0.0f};
-    GET_PARA(engine, par1_2)->speed = (sfVector2f){-300.0f, 0.0f};
-    GET_PARA(engine, par2_1)->speed = (sfVector2f){-200.0f, 0.0f};
-    GET_PARA(engine, par2_2)->speed = (sfVector2f){-200.0f, 0.0f};
-    GET_PARA(engine, par3_1)->speed = (sfVector2f){-100.0f, 0.0f};
-    GET_PARA(engine, par3_2)->speed = (sfVector2f){-100.0f, 0.0f};
+    GET_PARA(engine, par1_1)->speed = (sfVector2f){-1500.0f, 0.0f};
+    GET_PARA(engine, par1_2)->speed = (sfVector2f){-1500.0f, 0.0f};
+    GET_PARA(engine, par2_1)->speed = (sfVector2f){-1000.0f, 0.0f};
+    GET_PARA(engine, par2_2)->speed = (sfVector2f){-1000.0f, 0.0f};
+    GET_PARA(engine, par3_1)->speed = (sfVector2f){-500.0f, 0.0f};
+    GET_PARA(engine, par3_2)->speed = (sfVector2f){-500.0f, 0.0f};
 }
 
 void images_pos(void)
 {
     engine_t *engine = get_engine();
 
-    sfSprite_setPosition(GET_PARA(engine, par1_2)->sprite, (sfVector2f){1776.0f, 0.0f});
-    sfSprite_setPosition(GET_PARA(engine, par2_2)->sprite, (sfVector2f){1776.0f, 0.0f});
-    sfSprite_setPosition(GET_PARA(engine, par3_2)->sprite, (sfVector2f){1776.0f, 0.0f});
+    sfSprite_setPosition(GET_PARA(engine, par1_2)->sprite,
+                        (sfVector2f){1776.0f, 0.0f});
+    sfSprite_setPosition(GET_PARA(engine, par2_2)->sprite,
+                        (sfVector2f){1776.0f, 0.0f});
+    sfSprite_setPosition(GET_PARA(engine, par3_2)->sprite,
+                        (sfVector2f){1776.0f, 0.0f});
 }

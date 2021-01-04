@@ -35,5 +35,6 @@ void get_image_pos(void)
 void get_element(void)
 {
     get_time();
+    get_image_pos();
     // ADD
 }
