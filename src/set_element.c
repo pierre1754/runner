@@ -12,9 +12,9 @@ void set_image_pos(void)
     engine_t *engine = get_engine();
 
     for (int i = 1; i < parSize; i++) {
-        if (GET_PARA(engine, i)->pos.x < -1776.f) {
+        if (GET_PARA(engine, i)->pos.x < -1184.f) {
             sfSprite_setPosition(GET_PARA(engine, i)->sprite,
-                                (sfVector2f){1776.0f, 0.0f});
+                                (sfVector2f){1100.0f, 0.0f});
         }
         sfSprite_move(GET_PARA(engine, i)->sprite,
                     (sfVector2f){GET_PARA(engine, i)->speed.x *
