@@ -7,13 +7,17 @@
 
 #include "my_runner.h"
 
-static char **init_array(void)
+static char **init_array(int len_line)
 {
     int size = 10;
     char **array = malloc(sizeof(char *) * (size + 1));
 
-    for (int i = 0; i <= size; i++)
-        array[i] = NULL;
+    for (int i = 0; i <= size; i++) {
+        array[i] = malloc(sizeof(char *) * (len_line));
+        memset(array[i], ' ', len_line - 1);
+        array[i][len_line - 1] = '\0';
+    }
+    array[size] = NULL;
     return array;
 }
 
@@ -42,7 +46,28 @@ int get_len(char *file)
             actual_len = 0;
         }
     }
-    printf("%d\n", max_len);
+    return max_len;
+}
+
+char **my_str_to_line_array(char const *file, int lines, int bytes)
+{
+    int size = 10;
+    char **map = init_array(lines);
+    int adv = 0;
+    int act_line = 0;
+
+    if (file == 0)
+        return 0;
+    for (int tab_nbr = 0; tab_nbr < size; tab_nbr++) {
+        if (adv >= bytes)
+            return map;
+        for (; file[adv + act_line] != '\n'; act_line++);
+        map[tab_nbr] = my_strncpy(map[tab_nbr], (file + adv), act_line);
+        act_line++;
+        adv += act_line;
+        act_line = 0;
+    }
+    return map;
 }
 
 char **get_map(char *path)
@@ -58,26 +83,5 @@ char **get_map(char *path)
     read(fd, file, size.st_size);
     if (verif_map(file))
         return NULL;
-    get_len(file);
-    // return my_str_to_line_array(file, );
+    return my_str_to_line_array(file, get_len(file), size.st_size);
 }
-
-// char **my_str_to_line_array(char const *str, int lines, int nbr_char)
-// {
-//     map_t *map = malloc(sizeof(map_t));
-//     int adv = 0;
-
-//     if (str == 0 || count_lines(map, str, lines))
-//         return 0;
-//     map->x = colon(str);
-//     map->map = init_array(lines);
-//     for (int tab_nbr = 0; tab_nbr < lines; tab_nbr++) {
-//         if (adv >= nbr_char)
-//             return map;
-//         map->map[tab_nbr] = my_strndup((str + adv), map->x);
-//             for (; str[adv] != '\n'; adv++);
-//         adv++;
-//     }
-//     map->map[map->y] = NULL;
-//     return map;
-// }
