@@ -14,12 +14,15 @@ int main(int argc, char **argv)
         return 84;
     if (argv[1][0] == '-')
         return flag(argv);
+    create_engine();
+    create_map_struct();
     map = get_map(argv[1]);
     if (!map)
         return 84;
-    create_engine(map);
     init_element();
     start_engine();
     destroy_engine();
     return 0;
 }
+
+// SEE FOR MAP

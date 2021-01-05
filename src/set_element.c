@@ -21,7 +21,7 @@ void set_map_elem(void)
             LIST_INSERT_HEAD(GET_HEAD(engine), elem, entries);
         }
     }
-    if (GET_MAP(engine)->map_adv < 99)
+    if (GET_MAP(engine)->map_adv < GET_MAP(engine)->map_len - 1)
         GET_MAP(engine)->map_adv++;
 }
 

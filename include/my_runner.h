@@ -10,6 +10,7 @@
 
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <stdbool.h>
 #include <string.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -41,6 +42,7 @@ typedef struct {
 
 typedef struct {
     char **map;
+    int map_len;
     int map_adv;
 } map_t;
 
@@ -50,7 +52,6 @@ typedef struct {
     object_t *object;
     sfEvent event;
     time_elapsed_t *time;
-    map_t *map;
 } engine_t;
 
 int flag(char **av);
@@ -58,8 +59,8 @@ char **get_map(char *path);
 
 engine_t *get_engine(void);
 
-void create_map_struct(char **map);
-void create_engine(char **map);
+void create_map_struct(void);
+void create_engine(void);
 
 void init_cursor(void);
 void init_music(void);

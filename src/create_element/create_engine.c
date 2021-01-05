@@ -24,19 +24,18 @@ void create_time(void)
     GET_CLOCK(engine) = sfClock_create();
 }
 
-void create_map_struct(char **map)
+void create_map_struct(void)
 {
     engine_t *engine = get_engine();
 
     GET_MAP(engine) = malloc(sizeof(map_t));
 
-    GET_MAP(engine)->map = map;
     GET_MAP(engine)->map_adv = 0;
+    GET_MAP(engine)->map_len = 0;
 }
 
-void create_engine(char **map)
+void create_engine(void)
 {
-    create_map_struct(map);
     create_window();
     create_asset();
     create_object();

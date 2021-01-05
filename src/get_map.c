@@ -22,18 +22,25 @@ static char **init_array(int len_line)
 
 static int verif_map(char *file)
 {
+    bool player = 0;
     for (int i = 0; file[i]; i++) {
-        if ((file[i] < '1' || file[i] > '1') &&
+        if ((file[i] != '1' && file[i] != '5') &&
             file[i] != '\n' &&
             file[i] != ' ') {
             return 1;
         }
+        if (file[i] == '5') {
+            player++;
+        }
     }
+    if (player != 1)
+        return 1;
     return 0;
 }
 
 int get_len(char *file)
 {
+    engine_t *engine = get_engine();
     int max_len = 0;
     int actual_len = 0;
 
@@ -45,6 +52,7 @@ int get_len(char *file)
             actual_len = 0;
         }
     }
+    GET_MAP(engine)->map_len = max_len;
     return max_len;
 }
 
@@ -70,6 +78,7 @@ char **my_str_to_line_array(char const *file, int lines, int bytes)
 
 char **get_map(char *path)
 {
+    engine_t *engine = get_engine();
     struct stat size = {0};
     int fd = open(path, O_RDONLY);
     char *file = NULL;
@@ -81,5 +90,7 @@ char **get_map(char *path)
     read(fd, file, size.st_size);
     if (verif_map(file))
         return NULL;
-    return my_str_to_line_array(file, get_len(file), size.st_size);
+    GET_MAP(engine)->map = my_str_to_line_array(file,
+                        get_len(file), size.st_size);
+    return GET_MAP(engine)->map;
 }
