@@ -10,10 +10,19 @@
 void set_map_elem(void)
 {
     engine_t *engine = get_engine();
+    map_elem_t *elem;
 
     for (int i = 0; i < SIZE_MAP; i++) {
-
+        if (GET_MAP(engine)->map[i][GET_MAP(engine)->map_adv] == '1') {
+            elem = new_map_elem_1();
+            elem->pos = (sfVector2f){GET_MAP(engine)->map_adv *
+                                    MAP_SIZE, i * MAP_SIZE};
+            sfSprite_setPosition(elem->sprite, elem->pos);
+            LIST_INSERT_HEAD(GET_HEAD(engine), elem, entries);
+        }
     }
+    if (GET_MAP(engine)->map_adv < 99)
+        GET_MAP(engine)->map_adv++;
 }
 
 void set_image_pos(void)
@@ -23,7 +32,8 @@ void set_image_pos(void)
     for (int i = 1; i < parSize; i++) {
         if (GET_PARA(engine, i)->pos.x < -IMAGE_SIZE) {
             sfSprite_setPosition(GET_PARA(engine, i)->sprite,
-                                (sfVector2f){IMAGE_SIZE - IMAGE_SIZE / 15, 0.0f});
+                                (sfVector2f)
+                                {IMAGE_SIZE - IMAGE_SIZE / 15, -95.0f});
         }
         sfSprite_move(GET_PARA(engine, i)->sprite,
                     (sfVector2f){GET_PARA(engine, i)->speed.x *

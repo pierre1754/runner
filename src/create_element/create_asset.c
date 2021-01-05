@@ -35,7 +35,7 @@ static void create_non_rect(void)
     GET_TEXTURE(engine, texQuit)->texture =
     sfTexture_createFromFile("asset/quit.png", NULL);
     GET_TEXTURE(engine, texGround)->texture =
-    sfTexture_createFromFile("asset/ground.png", NULL);
+    sfTexture_createFromFile("asset/dirt.jpeg", NULL);
 }
 
 static void create_text_sprite(void)

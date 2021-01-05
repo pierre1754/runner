@@ -7,6 +7,16 @@
 
 #include "my_runner.h"
 
+void draw_map(void)
+{
+    engine_t *engine = get_engine();
+    map_elem_t *elem;
+
+    LIST_FOREACH(elem, GET_HEAD(engine), entries) {
+        sfRenderWindow_drawSprite(GET_WINDOW(engine), elem->sprite, NULL);
+    }
+}
+
 void draw_background(void)
 {
     engine_t *engine = get_engine();
@@ -27,5 +37,6 @@ void draw_element(void)
 
     sfRenderWindow_clear(GET_WINDOW(engine), sfBlack);
     draw_background();
+    draw_map();
     sfRenderWindow_display(GET_WINDOW(engine));
 }

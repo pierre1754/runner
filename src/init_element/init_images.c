@@ -35,10 +35,14 @@ void images_pos(void)
 {
     engine_t *engine = get_engine();
 
-    sfSprite_setPosition(GET_PARA(engine, par1_2)->sprite,
-                        (sfVector2f){IMAGE_SIZE, 0.0f});
-    sfSprite_setPosition(GET_PARA(engine, par2_2)->sprite,
-                        (sfVector2f){IMAGE_SIZE, 0.0f});
-    sfSprite_setPosition(GET_PARA(engine, par3_2)->sprite,
-                        (sfVector2f){IMAGE_SIZE, 0.0f});
+    for (int i = 1; i < parSize; i++) {
+        if (i % 2 == 0) {
+            sfSprite_setPosition(GET_PARA(engine, i)->sprite,
+                        (sfVector2f){IMAGE_SIZE, -95.0f});
+        }
+        else {
+            sfSprite_setPosition(GET_PARA(engine, i)->sprite,
+                        (sfVector2f){0, -95.0f});
+        }
+    }
 }

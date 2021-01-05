@@ -65,7 +65,7 @@ typedef struct map_elem_s {
     sfSprite *sprite;
     sfVector2f speed;
     sfVector2f pos;
-    LIST_ENTRY(map_elem_t) entries;
+    LIST_ENTRY(map_elem_s) entries;
 } map_elem_t;
 
 typedef struct {
@@ -75,7 +75,7 @@ typedef struct {
 } object_t;
 
 void create_environement(void);
-
+map_elem_t *new_map_elem_1(void);
 void create_object(void);
 void destroy_object(void);
 

@@ -25,8 +25,9 @@
 #define WIN_X 1280
 #define WIN_Y 720
 
-#define SIZE_MAP 10
+#define SIZE_MAP 12
 #define IMAGE_SIZE 1776
+#define MAP_SIZE 64
 
 #define GET_CLOCK(engine) (engine->time->clock)
 #define GET_ELAPSED(engine) (engine->time->time_elapsed)
@@ -79,6 +80,7 @@ void set_image_pos(void);
 void set_element(void);
 
 void draw_background(void);
+void draw_map(void);
 void draw_element(void);
 
 void destroy_engine(void);

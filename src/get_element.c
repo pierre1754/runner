@@ -33,17 +33,9 @@ void get_image_pos(void)
     }
 }
 
-void get_window_size(void)
-{
-    engine_t *engine = get_engine();
-
-    GET_WINDOW_SIZE(engine) = sfRenderWindow_getSize(GET_WINDOW(engine));
-}
-
 void get_element(void)
 {
     get_time();
     get_image_pos();
-    get_window_size();
     // ADD
 }

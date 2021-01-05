@@ -23,7 +23,6 @@ typedef struct {
 } window_t;
 
 void create_window(void);
-void get_window_size(void);
 void destroy_window(void);
 
 #endif // WINDOW_H
