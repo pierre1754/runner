@@ -18,5 +18,6 @@ map_elem_t *new_map_elem_1(void)
     sfSprite_setTexture(new_elem->sprite,
                         GET_TEXTURE(engine, texGround)->texture,
                         sfTrue);
+    sfSprite_setScale(new_elem->sprite, (sfVector2f){0.5f, 0.5f});
     return new_elem;
 }

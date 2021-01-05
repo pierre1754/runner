@@ -17,7 +17,7 @@ int main(int argc, char **argv)
     map = get_map(argv[1]);
     if (!map)
         return 84;
-    create_engine();
+    create_engine(map);
     init_element();
     start_engine();
     destroy_engine();

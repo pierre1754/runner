@@ -19,10 +19,11 @@
 
 typedef struct {
     sfRenderWindow *window;
-    sfVector2f window_size;
+    sfVector2u window_size;
 } window_t;
 
 void create_window(void);
+void get_window_size(void);
 void destroy_window(void);
 
 #endif // WINDOW_H

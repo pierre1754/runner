@@ -7,14 +7,23 @@
 
 #include "my_runner.h"
 
+void set_map_elem(void)
+{
+    engine_t *engine = get_engine();
+
+    for (int i = 0; i < SIZE_MAP; i++) {
+
+    }
+}
+
 void set_image_pos(void)
 {
     engine_t *engine = get_engine();
 
     for (int i = 1; i < parSize; i++) {
-        if (GET_PARA(engine, i)->pos.x < -1184.f) {
+        if (GET_PARA(engine, i)->pos.x < -IMAGE_SIZE) {
             sfSprite_setPosition(GET_PARA(engine, i)->sprite,
-                                (sfVector2f){1100.0f, 0.0f});
+                                (sfVector2f){IMAGE_SIZE - IMAGE_SIZE / 15, 0.0f});
         }
         sfSprite_move(GET_PARA(engine, i)->sprite,
                     (sfVector2f){GET_PARA(engine, i)->speed.x *
@@ -34,5 +43,6 @@ void set_sprite_loop(void)
 
 void set_element(void)
 {
+    set_map_elem();
     set_image_pos();
 }
