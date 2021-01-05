@@ -6,6 +6,7 @@
 ##
 
 SRC =	flags.c													\
+		src/get_map.c											\
 		src/create_element/create_engine.c						\
 		src/create_element/create_window.c						\
 		src/create_element/create_asset.c						\

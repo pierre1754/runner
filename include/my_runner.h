@@ -8,6 +8,14 @@
 #ifndef MY_RUNNER_H
 #define MY_RUNNER_H
 
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <string.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <fcntl.h>
+
 #include "my.h"
 
 #include "window.h"
@@ -31,6 +39,8 @@ typedef struct {
 } engine_t;
 
 int flag(char **av);
+char **get_map(char *path);
+
 engine_t *get_engine(void);
 
 void create_engine(void);
