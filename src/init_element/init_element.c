@@ -25,7 +25,7 @@ void init_music(void)
 void init_element(void)
 {
     init_cursor();
-    init_music();
+    // init_music();
     image_scale();
     image_speed();
     images_pos();

@@ -15,7 +15,7 @@ void create_window(void)
     engine->window = malloc(sizeof(window_t));
     GET_WINDOW(engine) = sfRenderWindow_create(mode,
                                             "My Runner",
-                                            sfClose,
+                                            sfClose | sfResize,
                                             NULL);
     sfRenderWindow_setVerticalSyncEnabled(GET_WINDOW(engine), sfTrue);
     GET_WINDOW_SIZE(engine) = (sfVector2f) {mode.width, mode.height};

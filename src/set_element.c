@@ -12,7 +12,6 @@ void set_image_pos(void)
     engine_t *engine = get_engine();
 
     for (int i = 1; i < parSize; i++) {
-        // printf("%f\n", GET_PARA(engine, i)->pos.x);
         if (GET_PARA(engine, i)->pos.x < -1776.f) {
             sfSprite_setPosition(GET_PARA(engine, i)->sprite,
                                 (sfVector2f){1776.0f, 0.0f});

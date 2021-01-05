@@ -11,7 +11,8 @@ void get_event(void)
 {
     engine_t *engine = get_engine();
 
-    if (engine->event.type == sfEvtKeyPressed)
+    if (engine->event.type == sfEvtKeyPressed ||
+        engine->event.type == sfEvtClosed)
         sfRenderWindow_close(GET_WINDOW(engine));
 }
 
