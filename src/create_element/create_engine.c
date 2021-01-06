@@ -24,21 +24,20 @@ void create_time(void)
     GET_CLOCK(engine) = sfClock_create();
 }
 
-void create_map_struct(void)
+void create_issues_map(map_t *map)
 {
     engine_t *engine = get_engine();
 
-    GET_MAP(engine) = malloc(sizeof(map_t));
-
-    GET_MAP(engine)->map_adv = 0;
-    GET_MAP(engine)->map_len = 0;
+    GET_MAP(engine) = map;
+    GET_ISSUE(engine).win = 0;
+    GET_ISSUE(engine).loose = 0;
 }
 
 void create_engine(map_t *map)
 {
     engine_t *engine = get_engine();
 
-    GET_MAP(engine) = map;
+    create_issues_map(map);
     create_window();
     create_asset();
     create_object();

@@ -31,10 +31,17 @@
 #define IMAGE_SIZE 1776
 #define MAP_SIZE 64
 
+#define CHECK_X GET_PLAYER(engine)->pos.x >= elem->pos.x &&             \
+                GET_PLAYER(engine)->pos.x <= (elem->pos.x + MAP_SIZE)
+#define CHECK_Y GET_PLAYER(engine)->pos.y >= elem->pos.y - MAP_SIZE &&  \
+                GET_PLAYER(engine)->pos.y <= (elem->pos.y)
+
 #define GET_CLOCK(engine) (engine->time->clock)
 #define GET_ELAPSED(engine) (engine->time->time_elapsed)
 
 #define GET_MAP(engine) (engine->map)
+
+#define GET_ISSUE(engine) (engine->issues)
 
 typedef struct {
     sfClock *clock;
@@ -48,12 +55,18 @@ typedef struct {
 } map_t;
 
 typedef struct {
+    bool win;
+    bool loose;
+} issues_t;
+
+typedef struct {
     window_t *window;
     asset_t *asset;
     object_t *object;
     sfEvent event;
     time_elapsed_t *time;
     map_t *map;
+    issues_t issues;
 } engine_t;
 
 int flag(char **av);
@@ -61,7 +74,7 @@ map_t *get_map(map_t *map, char *path);
 
 engine_t *get_engine(void);
 
-void create_map_struct(void);
+void create_issues_map(map_t *map);
 void create_engine(map_t *map);
 
 void place_player(int i);

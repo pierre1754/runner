@@ -13,22 +13,24 @@ static int check_collision(map_elem_t *elem, int hit)
     bool x = 0;
     bool y = 0;
 
-    x = GET_PLAYER(engine)->pos.x >= elem->pos.x &&
-        GET_PLAYER(engine)->pos.x <= (elem->pos.x + MAP_SIZE);
-    y = GET_PLAYER(engine)->pos.y >= elem->pos.y - MAP_SIZE;
+    x = CHECK_X;
+    y = CHECK_Y;
         if (y && x) {
             GET_PLAYER(engine)->speed.y = 0;
             GET_PLAYER(engine)->jump = 0;
             hit++;
         }
-        if (x && (GET_PLAYER(engine)->pos.y > elem->pos.y - (MAP_SIZE - MAP_SIZE / 5)));
+        if (x && (GET_PLAYER(engine)->pos.y > elem->pos.y -
+            (MAP_SIZE - MAP_SIZE / 5)));
             // ADD LOOSE BUTTON
-        else if (x && (GET_PLAYER(engine)->pos.y > elem->pos.y - MAP_SIZE)) {
-            GET_PLAYER(engine)->speed.y = (elem->pos.y - MAP_SIZE) -
-                                        (GET_PLAYER(engine)->pos.y);
-        }
+        // else if (x && (GET_PLAYER(engine)->pos.y > elem->pos.y - MAP_SIZE)) {
+        //     GET_PLAYER(engine)->speed.y = (elem->pos.y - MAP_SIZE) -
+        //                                 (GET_PLAYER(engine)->pos.y);
+        // }
     return hit;
 }
+
+// SEE FOR COLLISIONS
 
 void set_player_pos(void)
 {
