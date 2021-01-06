@@ -42,7 +42,7 @@ void set_player_pos(void)
     int hit = 0;
 
     LIST_FOREACH(elem, GET_HEAD(engine), entries) {
-        if (GET_PLAYER(engine)->pos.y >= elem->pos.y - 64) {
+        if (GET_PLAYER(engine)->pos.y >= elem->pos.y - MAP_SIZE) {
             GET_PLAYER(engine)->speed.y = 0;
             GET_PLAYER(engine)->jump = 0;
             hit++;
