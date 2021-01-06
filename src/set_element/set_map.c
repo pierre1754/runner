@@ -10,7 +10,6 @@
 void set_map_elem(void)
 {
     engine_t *engine = get_engine();
-    map_elem_t *elem;
 
     for (int i = 0; i < SIZE_MAP; i++) {
         map_elem_1(i);
@@ -72,4 +71,15 @@ void set_player_pos(void)
         GET_PLAYER(engine)->speed.y += GET_ELAPSED(engine) * 20;
     }
     sfSprite_move(GET_PLAYER(engine)->sprite, GET_PLAYER(engine)->speed);
+}
+
+void set_map_pos(void)
+{
+    engine_t *engine = get_engine();
+    map_elem_t *elem;
+
+    LIST_FOREACH(elem, GET_HEAD(engine), entries) {
+        sfSprite_move(elem->sprite, (sfVector2f)
+                    {elem->speed.x * GET_ELAPSED(engine), 0.0f});
+    }
 }

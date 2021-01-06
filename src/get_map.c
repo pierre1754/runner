@@ -31,7 +31,7 @@ static int verif_map(char *file)
             return 1;
         }
         if (file[i] == '5') {
-            player++;
+            player = 1;
         }
     }
     if (player != 1)

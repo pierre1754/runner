@@ -27,5 +27,6 @@ void set_element(void)
     set_sprite_loop();
     set_map_elem();
     set_image_pos();
+    set_map_pos();
     set_player_pos();
 }

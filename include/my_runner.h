@@ -27,6 +27,7 @@
 #define WIN_Y 720
 
 #define SIZE_MAP 12
+#define LEN_MAP 100
 #define IMAGE_SIZE 1776
 #define MAP_SIZE 64
 
@@ -86,6 +87,7 @@ void set_sprite_loop(void);
 void set_image_pos(void);
 void set_map_elem(void);
 void set_player_pos(void);
+void set_map_pos(void);
 void set_element(void);
 
 void draw_background(void);
