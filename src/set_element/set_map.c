@@ -34,3 +34,21 @@ void set_image_pos(void)
                     GET_ELAPSED(engine), 0.0f});
     }
 }
+
+void set_player_pos(void)
+{
+    engine_t *engine = get_engine();
+    map_elem_t *elem;
+    int hit = 0;
+
+    LIST_FOREACH(elem, GET_HEAD(engine), entries) {
+        if (GET_PLAYER(engine)->pos.y >= elem->pos.y - 64) {
+            GET_PLAYER(engine)->speed.y = 0;
+            hit++;
+        }
+    }
+    if (!hit) {
+        GET_PLAYER(engine)->speed.y += GET_ELAPSED(engine) * 10;
+    }
+    sfSprite_move(GET_PLAYER(engine)->sprite, GET_PLAYER(engine)->speed);
+}

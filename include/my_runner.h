@@ -85,6 +85,7 @@ void map_elem_1(int i);
 void set_sprite_loop(void);
 void set_image_pos(void);
 void set_map_elem(void);
+void set_player_pos(void);
 void set_element(void);
 
 void draw_background(void);
