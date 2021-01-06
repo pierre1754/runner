@@ -24,5 +24,3 @@ int main(int argc, char **argv)
     destroy_engine();
     return 0;
 }
-
-// SEE FOR MAP

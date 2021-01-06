@@ -23,6 +23,7 @@ static char **init_array(int len_line)
 static int verif_map(char *file)
 {
     bool player = 0;
+
     for (int i = 0; file[i]; i++) {
         if ((file[i] != '1' && file[i] != '5') &&
             file[i] != '\n' &&

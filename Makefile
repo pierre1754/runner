@@ -20,6 +20,7 @@ SRC =	flags.c													\
 		src/init_element/init_images.c							\
 		src/start_engine.c										\
 		src/get_element.c										\
+		src/map_elem.c											\
 		src/set_element.c										\
 		src/draw_element.c										\
 

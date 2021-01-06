@@ -13,13 +13,7 @@ void set_map_elem(void)
     map_elem_t *elem;
 
     for (int i = 0; i < SIZE_MAP; i++) {
-        if (GET_MAP(engine)->map[i][GET_MAP(engine)->map_adv] == '1') {
-            elem = new_map_elem_1();
-            elem->pos = (sfVector2f){GET_MAP(engine)->map_adv *
-                                    MAP_SIZE, i * MAP_SIZE};
-            sfSprite_setPosition(elem->sprite, elem->pos);
-            LIST_INSERT_HEAD(GET_HEAD(engine), elem, entries);
-        }
+        map_elem_1(i);
     }
     if (GET_MAP(engine)->map_adv < GET_MAP(engine)->map_len - 1)
         GET_MAP(engine)->map_adv++;
