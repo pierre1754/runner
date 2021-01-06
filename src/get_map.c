@@ -40,7 +40,6 @@ static int verif_map(char *file)
 
 int get_len(char *file)
 {
-    engine_t *engine = get_engine();
     int max_len = 0;
     int actual_len = 0;
 
@@ -52,7 +51,6 @@ int get_len(char *file)
             actual_len = 0;
         }
     }
-    GET_MAP(engine)->map_len = max_len;
     return max_len;
 }
 
@@ -76,9 +74,8 @@ char **my_str_to_line_array(char const *file, int lines, int bytes)
     return map;
 }
 
-char **get_map(char *path)
+map_t *get_map(map_t *map, char *path)
 {
-    engine_t *engine = get_engine();
     struct stat size = {0};
     int fd = open(path, O_RDONLY);
     char *file = NULL;
@@ -90,7 +87,10 @@ char **get_map(char *path)
     read(fd, file, size.st_size);
     if (verif_map(file))
         return NULL;
-    GET_MAP(engine)->map = my_str_to_line_array(file,
-                        get_len(file), size.st_size);
-    return GET_MAP(engine)->map;
+    map->map_len = get_len(file);
+    map->map_adv = 0;
+    map->map = my_str_to_line_array(file,
+                                    map->map_len,
+                                    size.st_size);
+    return map;
 }

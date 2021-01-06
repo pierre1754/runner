@@ -52,15 +52,16 @@ typedef struct {
     object_t *object;
     sfEvent event;
     time_elapsed_t *time;
+    map_t *map;
 } engine_t;
 
 int flag(char **av);
-char **get_map(char *path);
+map_t *get_map(map_t *map, char *path);
 
 engine_t *get_engine(void);
 
 void create_map_struct(void);
-void create_engine(void);
+void create_engine(map_t *map);
 
 void init_cursor(void);
 void init_music(void);

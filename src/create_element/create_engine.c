@@ -34,8 +34,11 @@ void create_map_struct(void)
     GET_MAP(engine)->map_len = 0;
 }
 
-void create_engine(void)
+void create_engine(map_t *map)
 {
+    engine_t *engine = get_engine();
+
+    GET_MAP(engine) = map;
     create_window();
     create_asset();
     create_object();

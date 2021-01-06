@@ -9,16 +9,16 @@
 
 int main(int argc, char **argv)
 {
-    char **map = NULL;
+    map_t *map = malloc(sizeof(map_t));
+
     if (argc > 2 || argc < 2)
         return 84;
     if (argv[1][0] == '-')
         return flag(argv);
-    create_engine();
-    create_map_struct();
-    map = get_map(argv[1]);
+    map = get_map(map, argv[1]);
     if (!map)
         return 84;
+    create_engine(map);
     init_element();
     start_engine();
     destroy_engine();
