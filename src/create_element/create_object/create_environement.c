@@ -51,6 +51,10 @@ static void create_buttons(void)
     sfSprite_setTexture(GET_BUTTON(engine)->pause_button,
                         GET_TEXTURE(engine, texQuit)->texture,
                         sfTrue);
+    GET_BUTTON(engine)->loose_button = sfSprite_create();
+    sfSprite_setTexture(GET_BUTTON(engine)->loose_button,
+                        GET_TEXTURE(engine, texLoose)->texture,
+                        sfTrue);
 }
 
 void create_environement(void)

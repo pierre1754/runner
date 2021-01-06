@@ -23,7 +23,7 @@ static int check_collision(map_elem_t *elem, int hit)
         }
         if (x && (GET_PLAYER(engine)->pos.y > elem->pos.y - (MAP_SIZE - MAP_SIZE / 5)));
             // ADD LOOSE BUTTON
-        else if ((GET_PLAYER(engine)->pos.y > elem->pos.y - MAP_SIZE) && x) {
+        else if (x && (GET_PLAYER(engine)->pos.y > elem->pos.y - MAP_SIZE)) {
             GET_PLAYER(engine)->speed.y = (elem->pos.y - MAP_SIZE) -
                                         (GET_PLAYER(engine)->pos.y);
         }

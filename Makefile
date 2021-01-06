@@ -9,7 +9,8 @@ SRC =	flags.c													\
 		src/get_map.c											\
 		src/create_element/create_engine.c						\
 		src/create_element/create_window.c						\
-		src/create_element/create_asset.c						\
+		src/create_element/create_asset/create_asset.c			\
+		src/create_element/create_asset/create_texture.c		\
 		src/create_element/create_object/create_object.c		\
 		src/create_element/create_object/create_environement.c	\
 		src/create_element/create_object/create_map_elem.c		\
