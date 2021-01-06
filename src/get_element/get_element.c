@@ -11,9 +11,16 @@ void get_event(void)
 {
     engine_t *engine = get_engine();
 
-    if (engine->event.type == sfEvtKeyPressed ||
-        engine->event.type == sfEvtClosed)
-        sfRenderWindow_close(GET_WINDOW(engine));
+    if (engine->event.type == sfEvtKeyReleased) {
+        if (engine->event.key.code == sfKeyEscape ||
+            engine->event.type == sfEvtClosed)
+            sfRenderWindow_close(GET_WINDOW(engine));
+        if (engine->event.key.code == sfKeySpace) {
+            GET_PLAYER(engine)->speed.y = -10;
+            sfSprite_move(GET_PLAYER(engine)->sprite,
+                        GET_PLAYER(engine)->speed);
+        }
+    }
 }
 
 void get_time(void)
