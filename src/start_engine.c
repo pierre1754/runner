@@ -7,8 +7,6 @@
 
 #include "my_runner.h"
 
-// SEE FOR LITTLE PANNEL
-
 void start_engine(void)
 {
     engine_t *engine = get_engine();

@@ -44,11 +44,13 @@ void set_player_pos(void)
     LIST_FOREACH(elem, GET_HEAD(engine), entries) {
         if (GET_PLAYER(engine)->pos.y >= elem->pos.y - 64) {
             GET_PLAYER(engine)->speed.y = 0;
+            GET_PLAYER(engine)->jump = 0;
             hit++;
         }
     }
     if (!hit) {
-        GET_PLAYER(engine)->speed.y += GET_ELAPSED(engine) * 10;
+        GET_PLAYER(engine)->jump = 1;
+        GET_PLAYER(engine)->speed.y += GET_ELAPSED(engine) * 20;
     }
     sfSprite_move(GET_PLAYER(engine)->sprite, GET_PLAYER(engine)->speed);
 }

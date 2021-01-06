@@ -59,6 +59,7 @@ typedef struct {
     sfVector2f speed;
     sfVector2f pos;
     sfIntRect rect;
+    bool jump;
 } player_t;
 
 typedef struct map_elem_s {

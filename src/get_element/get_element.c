@@ -11,11 +11,12 @@ void get_event(void)
 {
     engine_t *engine = get_engine();
 
-    if (engine->event.type == sfEvtKeyReleased) {
+    if (engine->event.type == sfEvtKeyPressed) {
         if (engine->event.key.code == sfKeyEscape ||
             engine->event.type == sfEvtClosed)
             sfRenderWindow_close(GET_WINDOW(engine));
-        if (engine->event.key.code == sfKeySpace) {
+        if (engine->event.key.code == sfKeySpace &&
+            GET_PLAYER(engine)->jump == 0) {
             GET_PLAYER(engine)->speed.y = -10;
             sfSprite_move(GET_PLAYER(engine)->sprite,
                         GET_PLAYER(engine)->speed);
