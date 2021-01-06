@@ -23,6 +23,7 @@ SRC =	flags.c													\
 		src/get_element/get_image_pos.c							\
 		src/get_element/get_element.c							\
 		src/map_elem.c											\
+		src/set_element/check_collision.c						\
 		src/set_element/set_map.c								\
 		src/set_element/set_element.c							\
 		src/draw_element.c										\
