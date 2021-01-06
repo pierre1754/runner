@@ -25,11 +25,13 @@ void place_player(int i)
 {
     engine_t *engine = get_engine();
 
-    if (GET_MAP(engine)->map[i][GET_MAP(engine)->map_adv] == '2') {
+    if (GET_MAP(engine)->map[i][GET_MAP(engine)->map_adv] == '5') {
         GET_PLAYER(engine)->pos = (sfVector2f)
                                 {GET_MAP(engine)->map_adv * MAP_SIZE,
                                 (i + 1) * MAP_SIZE};
         sfSprite_setPosition(GET_PLAYER(engine)->sprite,
                             GET_PLAYER(engine)->pos);
+        sfSprite_setTextureRect(GET_PLAYER(engine)->sprite,
+                                GET_PLAYER(engine)->rect);
     }
 }

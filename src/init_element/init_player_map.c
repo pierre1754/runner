@@ -7,7 +7,7 @@
 
 #include "my_runner.h"
 
-void set_map_elem(void)
+void init_map_elem(void)
 {
     engine_t *engine = get_engine();
     map_elem_t *elem;

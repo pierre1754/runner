@@ -29,5 +29,6 @@ void init_element(void)
     image_scale();
     image_speed();
     images_pos();
+    init_map_elem();
     // ADD
 }

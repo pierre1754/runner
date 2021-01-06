@@ -64,6 +64,7 @@ void create_map_struct(void);
 void create_engine(map_t *map);
 
 void place_player(int i);
+void init_map_elem(void);
 void init_cursor(void);
 void init_music(void);
 void image_scale(void);
@@ -79,12 +80,13 @@ void get_image_pos(void);
 void get_element(void);
 
 void map_elem_1(int i);
-void set_map_elem(void);
+void set_sprite_loop(void);
 void set_image_pos(void);
 void set_element(void);
 
 void draw_background(void);
 void draw_map(void);
+void draw_player(void);
 void draw_element(void);
 
 void destroy_engine(void);

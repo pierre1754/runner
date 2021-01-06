@@ -16,6 +16,7 @@ SRC =	flags.c													\
 		src/destroy_element/destroy_engine.c					\
 		src/destroy_element/destroy_window.c					\
 		src/destroy_element/destroy_asset.c						\
+		src/init_element/init_player_map.c						\
 		src/init_element/init_element.c							\
 		src/init_element/init_images.c							\
 		src/start_engine.c										\

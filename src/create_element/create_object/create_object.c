@@ -19,6 +19,8 @@ static void create_player(void)
     GET_PLAYER(engine)->pos = (sfVector2f){0};
     GET_PLAYER(engine)->speed = (sfVector2f){0};
     GET_PLAYER(engine)->rect = GET_TEXTURE(engine, texPlayer)->rect_texture;
+    sfSprite_setScale(GET_PLAYER(engine)->sprite,
+                        (sfVector2f){3.0f, 3.0f});
 }
 
 static void create_map(void)

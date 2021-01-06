@@ -44,7 +44,7 @@ static void create_text_sprite(void)
 
     GET_TEXTURE(engine, texPlayer)->texture =
     sfTexture_createFromFile("asset/player_run.png", NULL);
-    GET_TEXTURE(engine, texPlayer)->rect_texture = (sfIntRect){0, 0, 144, 24};
+    GET_TEXTURE(engine, texPlayer)->rect_texture = (sfIntRect){0, 0, 24, 24};
 }
 
 static void create_textures(void)
