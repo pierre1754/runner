@@ -34,25 +34,3 @@ void set_image_pos(void)
                     GET_ELAPSED(engine), 0.0f});
     }
 }
-
-void set_sprite_loop(void)
-{
-    engine_t *engine = get_engine();
-    static float sprite_refresh = 0;
-
-    if (sprite_refresh > 0.02f) {
-        GET_PLAYER(engine)->rect.left =
-        (GET_PLAYER(engine)->rect.left + 24) % 144;
-        sfSprite_setTextureRect(GET_PLAYER(engine)->sprite,
-                                GET_PLAYER(engine)->rect);
-        sprite_refresh = 0;
-    }
-    else sprite_refresh += GET_ELAPSED(engine);
-}
-
-void set_element(void)
-{
-    set_sprite_loop();
-    set_map_elem();
-    set_image_pos();
-}

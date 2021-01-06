@@ -23,19 +23,11 @@ void get_time(void)
     GET_ELAPSED(engine) = sfTime_asSeconds(sfClock_restart(GET_CLOCK(engine)));
 }
 
-void get_image_pos(void)
-{
-    engine_t *engine = get_engine();
-
-    for (int i = 1; i < parSize; i++) {
-        GET_PARA(engine, i)->pos =
-        sfSprite_getPosition(GET_PARA(engine, i)->sprite);
-    }
-}
-
 void get_element(void)
 {
     get_time();
     get_image_pos();
+    get_map_pos();
+    get_player_pos();
     // ADD
 }

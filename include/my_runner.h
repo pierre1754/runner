@@ -77,11 +77,14 @@ void start_engine(void);
 void get_event(void);
 void get_time(void);
 void get_image_pos(void);
+void get_map_pos(void);
+void get_player_pos(void);
 void get_element(void);
 
 void map_elem_1(int i);
 void set_sprite_loop(void);
 void set_image_pos(void);
+void set_map_elem(void);
 void set_element(void);
 
 void draw_background(void);
