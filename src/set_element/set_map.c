@@ -47,6 +47,10 @@ void set_player_pos(void)
             GET_PLAYER(engine)->jump = 0;
             hit++;
         }
+        if (GET_PLAYER(engine)->pos.y > elem->pos.y - MAP_SIZE) {
+            GET_PLAYER(engine)->speed.y = (elem->pos.y - MAP_SIZE) - 
+                                        (GET_PLAYER(engine)->pos.y);
+        }
     }
     if (!hit) {
         GET_PLAYER(engine)->jump = 1;
