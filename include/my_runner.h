@@ -32,10 +32,10 @@
 #define MAP_SIZE 64
 #define PLAYER_SIZE 81
 
-#define CHECK_X GET_PLAYER(engine)->pos.x >= elem->pos.x &&             \
-                GET_PLAYER(engine)->pos.x <= (elem->pos.x + MAP_SIZE)
-#define CHECK_Y GET_PLAYER(engine)->pos.y >= elem->pos.y - MAP_SIZE &&  \
-                GET_PLAYER(engine)->pos.y <= (elem->pos.y)
+#define MARGE MAP_SIZE - MAP_SIZE / 5
+
+#define X_PLAYER GET_PLAYER(engine)->pos.x
+#define Y_PLAYER GET_PLAYER(engine)->pos.y
 
 #define GET_CLOCK(engine) (engine->time->clock)
 #define GET_ELAPSED(engine) (engine->time->time_elapsed)

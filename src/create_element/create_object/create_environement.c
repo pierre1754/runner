@@ -61,6 +61,14 @@ static void create_buttons(void)
                         sfTrue);
 }
 
+static void set_button_pos(void)
+{
+    engine_t *engine = get_engine();
+
+    sfSprite_setPosition(GET_BUTTON(engine)->loose_button,
+                        (sfVector2f){(GET_WINDOW_SIZE(engine).x / 2) - 270, 0});
+}
+
 void create_environement(void)
 {
     engine_t *engine = get_engine();
@@ -69,4 +77,5 @@ void create_environement(void)
     GET_SCORE(engine) = 0;
     create_para_sprite();
     create_buttons();
+    set_button_pos();
 }
