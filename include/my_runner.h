@@ -32,7 +32,7 @@
 #define MAP_SIZE 64
 #define PLAYER_SIZE 81
 
-#define MARGE MAP_SIZE - MAP_SIZE / 5
+#define MARGE MAP_SIZE - MAP_SIZE / 7
 
 #define X_PLAYER GET_PLAYER(engine)->pos.x
 #define Y_PLAYER GET_PLAYER(engine)->pos.y

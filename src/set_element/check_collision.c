@@ -42,10 +42,10 @@ static int bottom_block(map_elem_t *elem, int hit)
 static void left_block(map_elem_t *elem)
 {
     engine_t *engine = get_engine();
-    int x = elem->pos.x - X_PLAYER;
+    int x = X_PLAYER - elem->pos.x;
     int y = Y_PLAYER - elem->pos.y;
-    bool hit_x = x <= 0;
-    bool hit_y = y > 0 && y < MAP_SIZE;
+    bool hit_x = x >= 0 && x < MAP_SIZE;
+    bool hit_y = y > -MAP_SIZE - MARGE && y <= 0;
 
     if (hit_x && hit_y) {
         GET_ISSUE(engine).loose = 1;
@@ -59,9 +59,9 @@ void set_player_pos(void)
     int hit = 0;
 
     LIST_FOREACH(elem, GET_HEAD(engine), entries) {
-        // left_block(elem);
         hit = high_block(elem, hit);
         hit = bottom_block(elem, hit);
+        // left_block(elem);
     }
     if (!hit) {
         GET_PLAYER(engine)->jump = 1;
