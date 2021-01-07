@@ -35,8 +35,6 @@ void create_issues_map(map_t *map)
 
 void create_engine(map_t *map)
 {
-    engine_t *engine = get_engine();
-
     create_issues_map(map);
     create_window();
     create_asset();

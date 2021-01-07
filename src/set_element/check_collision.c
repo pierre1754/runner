@@ -21,16 +21,14 @@ static int check_collision(map_elem_t *elem, int hit)
             hit++;
         }
         if (x && (GET_PLAYER(engine)->pos.y > elem->pos.y -
-            (MAP_SIZE - MAP_SIZE / 5)));
-            // ADD LOOSE BUTTON
-        // else if (x && (GET_PLAYER(engine)->pos.y > elem->pos.y - MAP_SIZE)) {
-        //     GET_PLAYER(engine)->speed.y = (elem->pos.y - MAP_SIZE) -
-        //                                 (GET_PLAYER(engine)->pos.y);
-        // }
+            (MAP_SIZE - MAP_SIZE / 5)))
+            GET_ISSUE(engine).loose = 1;
+        else if (x && (GET_PLAYER(engine)->pos.y > elem->pos.y - MAP_SIZE)) {
+            GET_PLAYER(engine)->speed.y = (elem->pos.y - MAP_SIZE) -
+                                        (GET_PLAYER(engine)->pos.y);
+        }
     return hit;
 }
-
-// SEE FOR COLLISIONS
 
 void set_player_pos(void)
 {

@@ -12,7 +12,6 @@ void create_sounds(void)
     engine_t *engine = get_engine();
 
     engine->asset->sounds = malloc(sizeof(sounds_t));
-
     GET_BUF_JUMP(engine) = sfSoundBuffer_createFromFile("asset/jump.ogg");
     GET_JUMP(engine) = sfSound_create();
     sfSound_setBuffer(GET_JUMP(engine), GET_BUF_JUMP(engine));

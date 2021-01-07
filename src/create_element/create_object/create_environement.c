@@ -44,16 +44,20 @@ static void create_buttons(void)
 
     GET_BUTTON(engine) = malloc(sizeof(buttons_t));
     GET_BUTTON(engine)->play_button = sfSprite_create();
+    GET_BUTTON(engine)->pause_button = sfSprite_create();
+    GET_BUTTON(engine)->loose_button = sfSprite_create();
+    GET_BUTTON(engine)->win_button = sfSprite_create();
     sfSprite_setTexture(GET_BUTTON(engine)->play_button,
                         GET_TEXTURE(engine, texPlay)->texture,
                         sfTrue);
-    GET_BUTTON(engine)->pause_button = sfSprite_create();
     sfSprite_setTexture(GET_BUTTON(engine)->pause_button,
                         GET_TEXTURE(engine, texQuit)->texture,
                         sfTrue);
-    GET_BUTTON(engine)->loose_button = sfSprite_create();
     sfSprite_setTexture(GET_BUTTON(engine)->loose_button,
                         GET_TEXTURE(engine, texLoose)->texture,
+                        sfTrue);
+    sfSprite_setTexture(GET_BUTTON(engine)->win_button,
+                        GET_TEXTURE(engine, texWin)->texture,
                         sfTrue);
 }
 

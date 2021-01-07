@@ -47,6 +47,7 @@ typedef struct {
     sfSprite *play_button;
     sfSprite *pause_button;
     sfSprite *loose_button;
+    sfSprite *win_button;
 } buttons_t;
 
 typedef struct {

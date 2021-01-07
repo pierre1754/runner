@@ -37,5 +37,4 @@ void get_element(void)
     get_image_pos();
     get_map_pos();
     get_player_pos();
-    // ADD
 }

@@ -30,6 +30,7 @@
 #define LEN_MAP 100
 #define IMAGE_SIZE 1776
 #define MAP_SIZE 64
+#define PLAYER_SIZE 81
 
 #define CHECK_X GET_PLAYER(engine)->pos.x >= elem->pos.x &&             \
                 GET_PLAYER(engine)->pos.x <= (elem->pos.x + MAP_SIZE)
@@ -88,6 +89,7 @@ void init_element(void);
 
 void start_engine(void);
 
+bool check_issues(void);
 void get_event(void);
 void get_time(void);
 void get_image_pos(void);

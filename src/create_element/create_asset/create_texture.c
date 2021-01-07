@@ -17,6 +17,8 @@ void create_button(void)
     sfTexture_createFromFile("asset/quit.png", NULL);
     GET_TEXTURE(engine, texLoose)->texture =
     sfTexture_createFromFile("asset/game_over.png", NULL);
+    GET_TEXTURE(engine, texWin)->texture =
+    sfTexture_createFromFile("asset/win.jpeg", NULL);
     GET_TEXTURE(engine, texGround)->texture =
     sfTexture_createFromFile("asset/dirt.jpeg", NULL);
 }

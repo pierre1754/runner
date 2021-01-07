@@ -31,6 +31,7 @@ typedef enum {
     texQuit,
     texPlayer,
     texLoose,
+    texWin,
     texGround,
 
     texSize
