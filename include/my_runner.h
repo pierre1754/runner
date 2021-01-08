@@ -11,6 +11,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <stdbool.h>
+#include <limits.h>
 #include <string.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -87,6 +88,7 @@ void init_music(void);
 void image_scale(void);
 void image_speed(void);
 void images_pos(void);
+void init_text(void);
 void init_element(void);
 
 void start_engine(void);

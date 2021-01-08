@@ -35,9 +35,9 @@ void set_button_pos(void)
     engine_t *engine = get_engine();
 
     sfSprite_setPosition(GET_BUTTON(engine)->loose_button,
-                        (sfVector2f){(GET_WINDOW_SIZE(engine).x / 2) - 270, 0});
+                    (sfVector2f){(GET_WINDOW_SIZE(engine).x / 2) - 270, 0});
     sfSprite_setPosition(GET_BUTTON(engine)->win_button,
-                        (sfVector2f){(GET_WINDOW_SIZE(engine).x / 2) - 270, 0});
+                    (sfVector2f){(GET_WINDOW_SIZE(engine).x / 2) - 270, 0});
 }
 
 void create_text(void)
@@ -46,6 +46,7 @@ void create_text(void)
 
     GET_SCORE(engine) = malloc(sizeof(score_t));
     GET_SCORE(engine)->score = 0;
+    GET_SCORE(engine)->font = sfFont_createFromFile("asset/pixelart.ttf");
     GET_SCORE(engine)->pt_score = sfText_create();
 }
 

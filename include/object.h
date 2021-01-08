@@ -51,7 +51,8 @@ typedef struct {
 } buttons_t;
 
 typedef struct {
-    size_t score;
+    int score;
+    sfFont *font;
     sfText *pt_score;
 } score_t;
 

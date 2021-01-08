@@ -29,6 +29,7 @@ void init_element(void)
     image_speed();
     images_pos();
     init_map_elem();
+    init_text();
 }
 
     // init_music();

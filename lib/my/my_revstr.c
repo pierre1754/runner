@@ -9,14 +9,13 @@
 
 char *my_revstr(char *str)
 {
-    int incr = 0;
-    int len = my_strlen(str);
-    char cp_str[len + 1];
+    int len = my_strlen(str) - 1;
+    char temp;
 
-    len--;
-    my_strcpy(cp_str, str);
-    for (;len >= 0 && str[incr]; len--, incr++)
-        str[incr] = cp_str[len];
-    str[incr + 1] = '\0';
+    for (int i = 0; i < (len + 1) / 2; i++, len--) {
+        temp = str[i];
+        str[i] = str[len];
+        str[len] = temp;
+    }
     return (str);
 }

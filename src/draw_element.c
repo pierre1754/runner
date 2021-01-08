@@ -44,10 +44,8 @@ void draw_score(void)
 {
     engine_t *engine = get_engine();
 
-    sfText_setString(GET_SCORE(engine)->pt_score,
-                    get_str((int)GET_SCORE(engine)->score));
-    sfText_setColor(GET_SCORE(engine)->pt_score, sfBlack);
-    sfText_setCharacterSize(GET_SCORE(engine)->pt_score, 200);
+    sfText_setString(GET_SCORE(engine)->pt_score, get_str(GET_SCORE(engine)->score));
+    sfRenderWindow_drawText(GET_WINDOW(engine), GET_SCORE(engine)->pt_score, NULL);
 }
 
 void draw_element(void)
