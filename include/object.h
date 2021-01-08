@@ -52,6 +52,11 @@ typedef struct {
 
 typedef struct {
     size_t score;
+    sfText *pt_score;
+} score_t;
+
+typedef struct {
+    score_t *score;
     parallax_t *parallax[parSize];
     buttons_t *buttons;
 } environement_t;
@@ -77,7 +82,13 @@ typedef struct {
     LIST_HEAD(, map_elem_s) map_elem;
 } object_t;
 
+void create_para_sprite(void);
+void create_buttons(void);
+void set_button_pos(void);
+void create_text(void);
+char *get_str(int nbr);
 void create_environement(void);
+
 map_elem_t *new_map_elem_1(void);
 void create_object(void);
 void destroy_object(void);

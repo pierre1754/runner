@@ -22,11 +22,19 @@ void set_sprite_loop(void)
     else sprite_refresh += GET_ELAPSED(engine);
 }
 
+void set_score(void)
+{
+    engine_t *engine = get_engine();
+
+    GET_SCORE(engine)->score += 500 * GET_ELAPSED(engine);
+}
+
 void set_element(void)
 {
     set_sprite_loop();
     set_image_pos();
     set_map_pos();
     set_player_pos();
+    set_score();
 }
     // set_map_elem();

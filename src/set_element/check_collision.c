@@ -10,7 +10,7 @@
 static int high_block(map_elem_t *elem, int hit)
 {
     engine_t *engine = get_engine();
-    int x = elem->pos.x - X_PLAYER;
+    int x = elem->pos.x - (X_PLAYER + 24);
     int y = (elem->pos.y - 3) - Y_PLAYER;
     bool hit_x = x > 0 && x < MAP_SIZE;
     bool hit_y = y > 0 && y < MAP_SIZE;
@@ -26,10 +26,10 @@ static int high_block(map_elem_t *elem, int hit)
 static int bottom_block(map_elem_t *elem, int hit)
 {
     engine_t *engine = get_engine();
-    int x = elem->pos.x - X_PLAYER;
+    int x = elem->pos.x - (X_PLAYER + 24);
     int y = Y_PLAYER - elem->pos.y;
     bool hit_x = x > 0 && x < MAP_SIZE;
-    bool hit_y = y > -10 && y < MAP_SIZE;
+    bool hit_y = y > -15 && y < MAP_SIZE;
 
     if (hit_x && hit_y) {
         GET_PLAYER(engine)->speed.y *= -1;
@@ -40,12 +40,12 @@ static int bottom_block(map_elem_t *elem, int hit)
 static void left_block(map_elem_t *elem)
 {
     engine_t *engine = get_engine();
-    int x = X_PLAYER - elem->pos.x;
+    int x = (X_PLAYER + 24) - elem->pos.x;
     int y = Y_PLAYER - (elem->pos.y - MAP_SIZE + MARGE);
     bool hit_x = x >= 0 && x <= MAP_SIZE;
     bool hit_y = y >= 0 && y <= MAP_SIZE;
 
-    if (hit_x && hit_y) {
+    if ((hit_x && hit_y) || Y_PLAYER > GET_WINDOW_SIZE(engine).y + 24) {
         GET_ISSUE(engine).loose = 1;
     }
 }

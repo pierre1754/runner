@@ -16,6 +16,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <fcntl.h>
+#include <math.h>
 
 #include "my.h"
 
@@ -78,6 +79,7 @@ engine_t *get_engine(void);
 void create_issues_map(map_t *map);
 void create_engine(map_t *map);
 
+void set_textures(int i, engine_t *engine);
 void place_player(int i);
 void init_map_elem(void);
 void init_cursor(void);
@@ -103,6 +105,7 @@ void set_image_pos(void);
 void set_map_elem(void);
 void set_player_pos(void);
 void set_map_pos(void);
+void set_score(void);
 void set_element(void);
 
 void draw_background(void);

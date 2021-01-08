@@ -5,30 +5,32 @@
 ## Main Makefile
 ##
 
-SRC =	flags.c													\
-		src/get_map.c											\
-		src/create_element/create_engine.c						\
-		src/create_element/create_window.c						\
-		src/create_element/create_asset/create_asset.c			\
-		src/create_element/create_asset/create_texture.c		\
-		src/create_element/create_object/create_object.c		\
-		src/create_element/create_object/create_environement.c	\
-		src/create_element/create_object/create_map_elem.c		\
-		src/destroy_element/destroy_engine.c					\
-		src/destroy_element/destroy_window.c					\
-		src/destroy_element/destroy_asset.c						\
-		src/init_element/init_player_map.c						\
-		src/init_element/init_element.c							\
-		src/init_element/init_images.c							\
-		src/start_engine.c										\
-		src/get_element/get_image_pos.c							\
-		src/set_element/check_issues.c							\
-		src/get_element/get_element.c							\
-		src/map_elem.c											\
-		src/set_element/check_collision.c						\
-		src/set_element/set_map.c								\
-		src/set_element/set_element.c							\
-		src/draw_element.c										\
+SRC =	flags.c																\
+		src/get_map.c														\
+		src/create_element/create_engine.c									\
+		src/create_element/create_window.c									\
+		src/create_element/create_asset/create_asset.c						\
+		src/create_element/create_asset/create_texture.c					\
+		src/create_element/create_object/create_object.c					\
+		src/create_element/create_object/create_env/create_par.c			\
+		src/get_str.c														\
+		src/create_element/create_object/create_env/create_environement.c	\
+		src/create_element/create_object/create_map_elem.c					\
+		src/destroy_element/destroy_engine.c								\
+		src/destroy_element/destroy_window.c								\
+		src/destroy_element/destroy_asset.c									\
+		src/init_element/init_player_map.c									\
+		src/init_element/init_element.c										\
+		src/init_element/init_images.c										\
+		src/start_engine.c													\
+		src/get_element/get_image_pos.c										\
+		src/set_element/check_issues.c										\
+		src/get_element/get_element.c										\
+		src/map_elem.c														\
+		src/set_element/check_collision.c									\
+		src/set_element/set_map.c											\
+		src/set_element/set_element.c										\
+		src/draw_element.c													\
 
 SRC_MAIN =	main.c	\
 

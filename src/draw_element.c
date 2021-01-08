@@ -40,6 +40,16 @@ void draw_player(void)
                             NULL);
 }
 
+void draw_score(void)
+{
+    engine_t *engine = get_engine();
+
+    sfText_setString(GET_SCORE(engine)->pt_score,
+                    get_str((int)GET_SCORE(engine)->score));
+    sfText_setColor(GET_SCORE(engine)->pt_score, sfBlack);
+    sfText_setCharacterSize(GET_SCORE(engine)->pt_score, 200);
+}
+
 void draw_element(void)
 {
     engine_t *engine = get_engine();
@@ -47,6 +57,7 @@ void draw_element(void)
     sfRenderWindow_clear(GET_WINDOW(engine), sfBlack);
     draw_background();
     draw_map();
+    draw_score();
     draw_player();
     sfRenderWindow_display(GET_WINDOW(engine));
 }
