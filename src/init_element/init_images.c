@@ -46,3 +46,13 @@ void images_pos(void)
         }
     }
 }
+
+void button_pos(void)
+{
+    engine_t *engine = get_engine();
+
+    sfSprite_setPosition(GET_BUTTON(engine)->play_button,
+    (sfVector2f){GET_WINDOW_SIZE(engine).x / 2 - 256,
+                GET_WINDOW_SIZE(engine).y / 2 - 121});
+
+}

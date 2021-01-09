@@ -84,12 +84,13 @@ void create_engine(map_t *map);
 void set_textures(int i, engine_t *engine);
 void place_player(int i);
 void init_map_elem(void);
-void init_cursor(void);
+void init_cursor(int issue);
 void init_music(void);
 void image_scale(void);
 void image_speed(void);
 void images_pos(void);
 void init_text(void);
+void button_pos(void);
 void init_element(void);
 
 void start_engine(void);

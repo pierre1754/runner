@@ -7,11 +7,11 @@
 
 #include "my_runner.h"
 
-void init_cursor(void)
+void init_cursor(int issue)
 {
     engine_t *engine = get_engine();
 
-    sfRenderWindow_setMouseCursorVisible(GET_WINDOW(engine), sfFalse);
+    sfRenderWindow_setMouseCursorVisible(GET_WINDOW(engine), issue);
 }
 
 void init_music(void)
@@ -24,11 +24,12 @@ void init_music(void)
 
 void init_element(void)
 {
-    init_cursor();
+    init_cursor(sfTrue);
     image_scale();
     image_speed();
     images_pos();
     init_map_elem();
     init_text();
-    init_music();
+    // init_music();
+    button_pos();
 }

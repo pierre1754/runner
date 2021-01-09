@@ -10,15 +10,17 @@
 void start_engine(void)
 {
     engine_t *engine = get_engine();
+    static bool start = 1;
 
     while (sfRenderWindow_isOpen(GET_WINDOW(engine))) {
         while (sfRenderWindow_pollEvent(GET_WINDOW(engine), &engine->event)) {
             get_event();
         }
         get_element();
-        if (!check_issues()) {
+        if (!check_issues() || start) {
             set_element();
             draw_element();
         }
+        start = 0;
     }
 }
