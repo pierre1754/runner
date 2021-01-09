@@ -18,6 +18,7 @@ void get_event(void)
         if (engine->event.key.code == sfKeySpace &&
             GET_PLAYER(engine)->jump == 0) {
             GET_PLAYER(engine)->speed.y = -10;
+            sfSound_play(GET_JUMP(engine));
             sfSprite_move(GET_PLAYER(engine)->sprite,
                         GET_PLAYER(engine)->speed);
         }

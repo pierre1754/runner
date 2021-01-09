@@ -60,6 +60,7 @@ typedef struct {
 typedef struct {
     bool win;
     bool loose;
+    bool start;
 } issues_t;
 
 typedef struct {

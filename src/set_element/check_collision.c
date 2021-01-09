@@ -50,6 +50,16 @@ static void left_block(map_elem_t *elem)
     }
 }
 
+static void check_win(map_elem_t *elem)
+{
+    engine_t *engine = get_engine();
+    bool hit_x = X_PLAYER > elem->pos.x;
+
+    if (hit_x && (engine->object->map_elem.lh_first->pos.x) == elem->pos.x) {
+        GET_ISSUE(engine).win = 1;
+    }
+}
+
 void set_player_pos(void)
 {
     engine_t *engine = get_engine();
@@ -60,6 +70,7 @@ void set_player_pos(void)
         hit = high_block(elem, hit);
         hit = bottom_block(elem, hit);
         left_block(elem);
+        check_win(elem);
     }
     if (!hit) {
         GET_PLAYER(engine)->jump = 1;

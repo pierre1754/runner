@@ -9,7 +9,6 @@
 
 char *get_str(int nbr)
 {
-    // int len = floor(log10(nbr)) + 1;
     char *result = malloc(sizeof(char) * 10);
     int rest = nbr;
     int temp;

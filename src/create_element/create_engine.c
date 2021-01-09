@@ -31,6 +31,7 @@ void create_issues_map(map_t *map)
     GET_MAP(engine) = map;
     GET_ISSUE(engine).win = 0;
     GET_ISSUE(engine).loose = 0;
+    GET_ISSUE(engine).start = 1;
 }
 
 void create_engine(map_t *map)
