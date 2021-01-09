@@ -11,8 +11,8 @@ static void check_window(void)
 {
     engine_t *engine = get_engine();
 
-    if (engine->event.key.code == sfKeyEscape ||
-        engine->event.type == sfEvtClosed)
+    if ((engine->event.key.code == sfKeyEscape ||
+        engine->event.type == sfEvtClosed))
         sfRenderWindow_close(GET_WINDOW(engine));
 }
 
@@ -34,10 +34,10 @@ static void check_play(void)
     engine_t *engine = get_engine();
     sfVector2i mouse = sfMouse_getPositionRenderWindow(GET_WINDOW(engine));
 
-    if (((GET_WINDOW_SIZE(engine).x / 2) - 206 < mouse.x &&
-    mouse.x < (GET_WINDOW_SIZE(engine).x / 2) + 206) &&
-    ((GET_WINDOW_SIZE(engine).y / 2) - 81 < mouse.y &&
-    mouse.y < (GET_WINDOW_SIZE(engine).y / 2) + 81)) {
+    if (BUTTON && GET_ISSUE(engine).exit) {
+        sfRenderWindow_close(GET_WINDOW(engine));
+    }
+    if (BUTTON && GET_ISSUE(engine).start) {
         GET_ISSUE(engine).start = 0;
         init_cursor(sfFalse);
     }
@@ -48,7 +48,7 @@ void get_event(void)
     engine_t *engine = get_engine();
 
     if (engine->event.type == sfEvtMouseButtonPressed &&
-    GET_ISSUE(engine).start) {
+    (GET_ISSUE(engine).start || GET_ISSUE(engine).exit)) {
         check_play();
     }
     if (engine->event.type == sfEvtKeyPressed) {

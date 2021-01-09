@@ -39,6 +39,11 @@
 #define X_PLAYER GET_PLAYER(engine)->pos.x
 #define Y_PLAYER GET_PLAYER(engine)->pos.y
 
+#define BUTTON ((GET_WINDOW_SIZE(engine).x / 2) - 206 < mouse.x &&      \
+                mouse.x < (GET_WINDOW_SIZE(engine).x / 2) + 206) &&     \
+                ((GET_WINDOW_SIZE(engine).y / 2) - 81 < mouse.y &&      \
+                mouse.y < (GET_WINDOW_SIZE(engine).y / 2) + 81)
+
 #define GET_CLOCK(engine) (engine->time->clock)
 #define GET_ELAPSED(engine) (engine->time->time_elapsed)
 
@@ -61,6 +66,7 @@ typedef struct {
     bool win;
     bool loose;
     bool start;
+    bool exit;
 } issues_t;
 
 typedef struct {

@@ -54,5 +54,7 @@ void button_pos(void)
     sfSprite_setPosition(GET_BUTTON(engine)->play_button,
     (sfVector2f){GET_WINDOW_SIZE(engine).x / 2 - 256,
                 GET_WINDOW_SIZE(engine).y / 2 - 121});
-
+    sfSprite_setPosition(GET_BUTTON(engine)->exit_button,
+    (sfVector2f){GET_WINDOW_SIZE(engine).x / 2 - 256,
+                GET_WINDOW_SIZE(engine).y / 2 - 121});
 }

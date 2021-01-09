@@ -7,15 +7,23 @@
 
 #include "my_runner.h"
 
+static void create_sprite(void)
+{
+    engine_t *engine = get_engine();
+
+    GET_BUTTON(engine)->play_button = sfSprite_create();
+    GET_BUTTON(engine)->pause_button = sfSprite_create();
+    GET_BUTTON(engine)->loose_button = sfSprite_create();
+    GET_BUTTON(engine)->win_button = sfSprite_create();
+    GET_BUTTON(engine)->exit_button = sfSprite_create();
+}
+
 void create_buttons(void)
 {
     engine_t *engine = get_engine();
 
     GET_BUTTON(engine) = malloc(sizeof(buttons_t));
-    GET_BUTTON(engine)->play_button = sfSprite_create();
-    GET_BUTTON(engine)->pause_button = sfSprite_create();
-    GET_BUTTON(engine)->loose_button = sfSprite_create();
-    GET_BUTTON(engine)->win_button = sfSprite_create();
+    create_sprite();
     sfSprite_setTexture(GET_BUTTON(engine)->play_button,
                         GET_TEXTURE(engine, texPlay)->texture,
                         sfTrue);
@@ -27,6 +35,9 @@ void create_buttons(void)
                         sfTrue);
     sfSprite_setTexture(GET_BUTTON(engine)->win_button,
                         GET_TEXTURE(engine, texWin)->texture,
+                        sfTrue);
+    sfSprite_setTexture(GET_BUTTON(engine)->exit_button,
+                        GET_TEXTURE(engine, texQuit)->texture,
                         sfTrue);
 }
 
