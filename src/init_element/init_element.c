@@ -30,6 +30,6 @@ void init_element(void)
     images_pos();
     init_map_elem();
     init_text();
-    // init_music();
+    init_music();
     button_pos();
 }
